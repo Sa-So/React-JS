@@ -79,7 +79,90 @@ let {b,c} = ä;
 ({b,c}) => {console.log(a)}
 
 ### destructuring arrays
+- use a comma to seperate values
+- let [ , , See] = ['a',5,3] 
+- console.log(See)
 
+### Restructuring
+- Object Literal enhancemment ?
+```js
+var a='a'
+var b = 845
+va comb = {a,b};
+```
+- object methods ?
+- okay so we can assign prop of obj to be a function !
+- when we declared a function outside it's this value was window 
+- when we asssigned it to obj then (this value changed ?)
+```js
+let a = {
+  b:'b',
+  c: 'c',
+  d() {
+    console.log(`hey $(this.a)`);
+  }
+  // ES^6
+};
+```
+# Spread the rest operators
+- ... 3 dots
+### combine objects / arrays !
+- when you combine it doesn't modify / mutate the original source 
+- we create new instance !
+```js
+var nepal = ['Everest','Fish Tail'];
+var jap = ['fuji'];
+var comb = [...nepal,...jap];
+
+```
+### rest
+```js
+var a = ['a','b'];
+var [f,...rest] = a;
+
+```
+### useful in 
+state - that contains certain data then u might get additional data from the api , so u might want to combine both data and render into app
+
+
+# Classes
+- create func and add methods ? on the functionibj using the prototype ??
+- js - func are obj - a prototype obj is always created when u create an obj
+```js
+// func a(b){this.b = b}
+// a.prototype.display = func(){clg(this.b);}
+// var c = new a("this is b")
+// clg(c.display());
+
+
+```
+### ES6
+```js
+class a { // this is also a function and so an obj so has a prototype obj.
+  constructor(b,c){
+    this.b= b;
+    this.c = c;
+   }
+}
+clg(a.prototype) // constructor ?
+// if constructor is a part of the prototype obj then y do we get 
+// only a constr when we clg prototype ?
+// constructor sets prop of class => this makes obj like prop of class (make sense)!!
+
+```
+### Extends 
+```js
+class ExtA extends a { 
+  constructor(destination,days,gear){
+    super(dest,days)// passing to parent for handling 
+    this.gear= gear ;
+  }
+  display(){
+    super.info();
+    clg("bring your ${this.gear.join("and your")}")
+  }
+}
+```
 
 
 
